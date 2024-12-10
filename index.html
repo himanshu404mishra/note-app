@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes App - Himanshu</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/custom.css" />
+    <link rel="stylesheet" href="./src/responsive.css">
+  </head>
+  <body class="bg-[#303030]">
+    <div id="screen-dim" class="fixed w-[100vw] h-[100vh] bg-[#00000081] z-20"></div>
+
+    
+
+    <!-- header of the page -->
+    <header class="border-b-gray-500 border-b-2 h-[13vh] sticky top-0 bg-[#303030] z-10">
+      <nav class="flex text-white items-center justify-between p-4">
+        <div id="menu" class="select-none flex items-center gap-3">
+          <i
+            id="menu-btn"
+            class="ri-menu-2-fill text-xl cursor-pointer hover:bg-[#80808033] rounded-full w-10 h-10 flex justify-center duration-150y-center items-center"
+          ></i>
+          <div id="logo" class="text-xl flex items-center cursor-pointer">
+            <img
+              src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png"
+              width="30"
+              alt=""
+            />
+            Notes
+          </div>
+        </div>
+        <div
+          id="serch"
+          class="bg-gray-500 w-96 py-1 px-3 focus-within:bg-white rounded-lg duration-150 text-lg font-[Gilroy] flex gap-2 "
+        >
+          <i
+            class="ri-search-line cursor-pointer hover:bg-[#49494965] rounded-full duration-200 h-10 w-10 flex items-center justify-center"
+          ></i>
+          <input
+            type="text"
+            placeholder="Search"
+            class="outline-none text-white focus:text-black bg-transparent placeholder:text-white focus:placeholder:text-gray-500 w-[90%]"
+          />
+        </div>
+        <div id="profile" class="select-none">
+          <button
+            id="sync"
+            class="bg-[#ffa6005e] px-3 py-1 font-800 rounded-md shadow-lg hover:bg-orange-400 duration-150 text-lg"
+          >
+            <i class="ri-refresh-line"></i> Sync
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex text-white">
+      <!-- sidebar -->
+      <aside
+        id="sidebar"
+        class="pl-0 py-3 px-3 flex flex-col justify-between h-[80vh] w-[25%] select-none sticky top-[13vh] duration-150"
+      >
+        <ul class="text-xl pl-0 pr-3 py-3 flex flex-col space-y-3">
+          <li>
+            <a
+              class="content-center pl-2 inline-block w-full h-12 rounded-r-3xl hover:bg-[#ffa6005d] duration-150"
+              href="#notes"
+              id="active"
+              ><i class="ri-booklet-line"></i>
+              <span class="sidebar-text">Notes</span></a
+            >
+          </li>
+          <li>
+            <a
+              class="content-center pl-2 inline-block w-full h-12 rounded-r-3xl hover:bg-[#ffa6005d] duration-150"
+              href="./pages/reminders.html"
+              ><i class="ri-notification-3-line"></i>
+              <span class="sidebar-text">Reminders</span></a
+            >
+          </li>
+          <li>
+            <a
+              class="content-center pl-2 inline-block w-full h-12 rounded-r-3xl hover:bg-[#ffa6005d] duration-150"
+              href="./pages/labels.html"
+              ><i class="ri-quill-pen-fill"></i>
+              <span class="sidebar-text">Edit Labels</span>
+            </a>
+          </li>
+          <li>
+            <a
+              class="content-center pl-2 inline-block w-full h-12 rounded-r-3xl hover:bg-[#ffa6005d] duration-150"
+              href="./pages/trash.html"
+              ><i class="ri-delete-bin-line"></i>
+              <span class="sidebar-text">Transh</span></a
+            >
+          </li>
+        </ul>
+
+        <div>
+          <p class="text-lg ml-4 hover:underline">&copy; Himanshu - 2025</p>
+        <p class="text-lg ml-4 hover:underline"><a href="https://github.com/himanshu404mishra" target="_blank" class=" cursor-pointer"><i class="ri-github-fill"></i> My Github</a></p>
+        </div>
+      </aside>
+
+      <!-- main view -->
+
+      <section
+        id="view"
+        class="flex items-center justify-center flex-col w-[75%] relative"
+      >
+      <p id="searchtermarea" class="absolute left-2 top-4 text-2xl text-[#bebebe] hidden">| Searching 🔎 for <span id="searchterm"></span></p>
+        <!-- notes section -->
+        <button
+          class="bg-[#885C09] px-4 py-3 rounded-full text-lg font-bold hover:bg-orange-900 font-[Gilroy] shadow-lg duration-200 active:scale-125 absolute right-2 top-4 select-none"
+          id="create-note"
+        >
+        <i class="ri-add-fill"></i>
+          New note
+        </button>
+        
+        <section
+          id="notes"
+          class="h-full w-full flex flex-wrap p-4 mt-16 gap-3 justify-evenly"
+        >
+       
+        </section>
+      </section>
+
+      <form id="note-box" class="w-[60vh] h-[80vh] space-y-3 fixed -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 bg-gray-900 p-5 rounded-xl z-20 shadow-lg duration-150 hide-note-box hidden">
+          <input type="text" placeholder="Write the title" class="block bg-transparent border border-gray-500 rounded-lg px-4 py-3 text-xl w-full" id="notetitle" required>
+        <div class="relative h-[75%]">
+          <textarea name="notebody" id="notebody" class="block h-full w-full rounded-lg bg-transparent border border-gray-500 resize-none p-3 duration-200" placeholder="Your note body.." required></textarea>
+          <div id="backgrounds" class="absolute bg-[#00000069] right-2 bottom-2 px-3 py-4 w-52 opacity-35 hover:opacity-100 duration-150 cursor-pointer rounded-lg">
+            <span id="1" class="h-8 w-8 bg-emerald-600 inline-block rounded-full"></span>
+            <span id="2" class="h-8 w-8 bg-pink-600 inline-block rounded-full"></span>
+            <span id="3" class="h-8 w-8 bg-yellow-600 inline-block rounded-full"></span>
+            <span id="4" class="h-8 w-8 bg-orange-600 inline-block rounded-full"></span>
+            <span id="5" class="h-8 w-8 bg-indigo-600 inline-block rounded-full"></span>
+          </div>
+        </div>
+       <div class="w-full flex items-center justify-evenly">
+        <button type="submit" id="save-note" class="bg-emerald-500 px-4 py-2 rounded-xl text-green-900 font-bold shadow-lg hover:bg-emerald-800 duration-200 hover:text-green-600 active:scale-105">Keep!</button>
+        <button id="discard-note" class="bg-red-700 px-4 py-2 rounded-xl text-gray-200 font-bold shadow-lg hover:bg-red-800 duration-200  active:scale-105">Discard</button>
+       </div>
+      </form>
+
+    </main>
+
+    <!-- notification -->
+    <div class="notification-container"></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

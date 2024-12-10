@@ -1,0 +1,162 @@
+@import url("./responsive.css");
+@font-face {
+    font-family: Gilroy;
+    src: url("/Gilroy-Regular.ttf");
+}
+@font-face {
+    font-family: Gilroy-bold;
+    src: url("/Gilroy-Bold.ttf");
+}
+#serch:focus-within i {
+    color: rgb(73, 73, 73);
+}
+
+#loading{
+    animation: loading 5s reverse linear;
+}
+
+@keyframes loading {
+    from{
+        width: 100%;
+    }to{
+        width: 0%;
+    }
+}
+
+.notification-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.notification {
+    background-color: #333;
+    color: white;
+    padding: 16px;
+    margin: 8px;
+    border-radius: 4px;
+    max-width: 300px;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slideIn 0.5s forwards;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.notification.success {
+    background-color: #4CAF50;
+}
+
+.notification.error {
+    background-color: #f44336;
+}
+
+.notification.warning {
+    background-color: #ff9800;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 23px;
+}
+.close-btn:hover{
+    color: rgb(170, 0, 0);
+}
+.close-btn:active{
+    scale: 1.2;
+}
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.notification.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+
+.rotate-animation{
+    animation: rotateAnimation 1s linear infinite;
+    display: inline-block;
+}
+
+@keyframes rotateAnimation{
+    to{
+        rotate: 360deg;
+    }
+}
+
+
+a#active{
+    background-color: rgba(156, 102, 0, 0.815);
+}
+
+#screen-dim{
+    display: none;
+}
+.hide-note-box{
+    animation: hide-note 500ms ease-out forwards;
+transform-origin: top left;
+
+}
+.show-note-box{
+    animation: show-note 500ms ease-in forwards;
+transform-origin: top left;
+}
+
+@keyframes hide-note{
+    from{
+        scale: 1;
+    }
+    to{
+        scale: 0;
+    }
+}
+@keyframes show-note{
+    from{
+        scale: 0;
+    }
+    to{
+        scale: 1;
+    }
+}
+
+
+.label {
+    padding: .3rem .5rem;
+    border-radius: 1rem;
+    box-shadow: .1px .1px 12px black;
+    color: whitesmoke;
+    transition: scale .2s ease;
+    user-select: none;
+}
+.label:active{
+    scale: 1.02;
+}
+.no-label{
+    background-color: gray;
+}
+.important-label{
+    background-color: rgb(255, 61, 61);
+}
+.done-label{
+    background-color: green;
+}
+.finish-later-label{
+    background-color: rgb(0, 118, 148);
+}
