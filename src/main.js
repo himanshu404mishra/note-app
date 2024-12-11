@@ -1,7 +1,7 @@
-import { notification } from './js/notification'
-import createNote from './js/createNote';
-import { showNotes } from './js/createNote';
-import search from './js/search';
+import { notification } from './js/notification.js'
+import createNote from './js/createNote.js';
+import { showNotes } from './js/createNote.js';
+import search from './js/search.js';
 import './style.css';
 
 

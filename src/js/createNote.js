@@ -1,4 +1,4 @@
-import { notification } from "./notification"
+import { notification } from "./notification.js"
 
 const createNote = () => {
     const noteBody = document.getElementById("notebody")

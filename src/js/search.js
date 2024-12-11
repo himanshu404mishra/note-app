@@ -1,4 +1,4 @@
-import { showNotes } from "./createNote";
+import { showNotes } from "./createNote.js";
 
 export default function search(){
     const searchBar = document.getElementById("serch")
