@@ -1,11 +1,11 @@
 @import url("./responsive.css");
 @font-face {
     font-family: Gilroy;
-    src: url("/Gilroy-Regular.ttf");
+    src: url("../public/Gilroy-Regular.ttf");
 }
 @font-face {
     font-family: Gilroy-bold;
-    src: url("/Gilroy-Bold.ttf");
+    src: url("../public/Gilroy-Bold.ttf");
 }
 #serch:focus-within i {
     color: rgb(73, 73, 73);
