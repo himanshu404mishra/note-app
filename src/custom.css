@@ -160,3 +160,31 @@ transform-origin: top left;
 .finish-later-label{
     background-color: rgb(0, 118, 148);
 }
+
+
+.note-body::-webkit-scrollbar
+ {
+    width: 6px;
+}
+.note-title::-webkit-scrollbar{
+    height: 6px;
+}
+/* Track */
+.note-body::-webkit-scrollbar-track,
+.note-title::-webkit-scrollbar-track {
+    background: #88888891;
+    border-radius: 5px;
+}
+
+/* Handle */
+.note-body::-webkit-scrollbar-thumb,
+.note-title::-webkit-scrollbar-thumb {
+    background: #303030;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+.note-body::-webkit-scrollbar-thumb:hover,
+.note-title::-webkit-scrollbar-thumb:hover {
+    background: #1f1f1f;
+}

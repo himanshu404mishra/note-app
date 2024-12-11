@@ -1,6 +1,7 @@
 # Notes App 📝
+![Preview image](./public/preview.PNG "Notes app preview")
 
-A barebpne sleek note-taking application built with Javascript(React version on the way...) and Tailwind, offering a fast and intuitive way to create, edit, and organize your notes.
+A barebone sleek note-taking application built with Javascript(React version on the way...) and Tailwind, offering a fast and intuitive way to create, edit, and organize your notes.
 
 ## Features
 

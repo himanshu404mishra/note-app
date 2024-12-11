@@ -49,7 +49,9 @@ function searchNote(searchterm) {
     let notes = JSON.parse(localStorage.getItem("notes"))
     let newSearchArr =[]
     notes.forEach((element,index) => {
-        if(element.title.includes(searchterm) || element.body.includes(searchterm) || element.label.includes(searchterm) || element.noteColor.includes(searchterm) || element.labeltype.includes(searchterm)){
+        
+        
+        if(element.title.toLowerCase().includes(searchterm.toLowerCase()) || element.body.toLowerCase().includes(searchterm.toLowerCase()) || element.label.toLowerCase().includes(searchterm.toLowerCase()) || element.noteColor.toLowerCase().includes(searchterm.toLowerCase()) || element.labeltype.toLowerCase().includes(searchterm.toLowerCase())){
             newSearchArr.push(notes[index])
         }
     });

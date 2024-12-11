@@ -96,6 +96,8 @@ const createNote = () => {
         e.preventDefault();
         let title = document.getElementById("notetitle").value
         let body = document.getElementById("notebody").value
+        console.log(body);
+        
         let noteColor = noteBodyColorChecker() || "bg-emerald-600"
         let label = "set label by clicking!"
         let labeltype = "no-label"
@@ -112,6 +114,7 @@ const createNote = () => {
             if(localStorage.getItem("notes")=="" || localStorage.getItem("notes")==undefined || localStorage.getItem("notes")== null){
                 let notesArr=[]
                 notesArr.push(noteObj)
+                
                 localStorage.setItem("notes",JSON.stringify(notesArr))
 
                 // hiding notebox
@@ -206,6 +209,8 @@ function showNotes() {
     let notData = JSON.parse(localStorage.getItem("notes"))
     let noteContainer = document.getElementById("notes")
     noteContainer ? noteContainer.innerHTML="" : undefined
+
+
     if(!notData || !notData.length){
         noteContainer.innerHTML=`<h1 class="text-5xl text-[#a3a3a37e] select-none">No Notes Available</h1>`
     }else{
@@ -213,18 +218,17 @@ function showNotes() {
             let colorArr = eachNote.noteColor.split("-")
             let titleColor = `bg-${colorArr[1]}-800`
             let hoverColor = `bg-${colorArr[1]}-500`
-            
             let note = `
-                 <div class="note ${eachNote.noteColor} hover:${hoverColor} duration-200 w-80 h-72 rounded-3xl p-3 space-y-4 cursor-pointer shadow-lg">
+                 <div class="note ${eachNote.noteColor} hover:${hoverColor} duration-200 w-80 h-fit max-h-96 rounded-3xl p-3 space-y-4 cursor-pointer shadow-lg active:shadow-2xl">
           <p class="flex items-center justify-between w-full"><span class="font-bold">*Label:</span>  <span class="label ${eachNote.labeltype}">${eachNote.label}</span> <i data-index="${index}" class="ri-delete-bin-6-line bg-[#00000094] px-3 py-2 rounded-full hover:scale-105 duration-150 active:scale-95"></i></p>
-          <h3 class="note-title w-full h-[15%] truncate ${titleColor} p-1.5 rounded-full flex items-center">${eachNote.title}</h3>
-          <p class="note-body w-full overflow-hidden text-ellipsis line-clamp-2 h-[60%]">${eachNote.body}</p>
+          <h3 class="note-title w-full h-[15%] overflow-auto whitespace-nowrap ${titleColor} p-1.5 rounded-full flex items-center">${eachNote.title}</h3>
+          <p class="note-body w-full overflow-auto break-words whitespace-pre-wrap bg-[#00000023] p-2 rounded-2xl h-fit max-h-52 min-h-40">${eachNote.body}</p>
         </div>
             `
-            
             const div = document.createElement("div")
             div.innerHTML=note
             noteContainer.appendChild(div)
+            
             
         });
         document.querySelectorAll(".ri-delete-bin-6-line").forEach(elem=>{
