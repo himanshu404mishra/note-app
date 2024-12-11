@@ -1,4 +1,7 @@
 # Notes App 📝
+## Live Link:
+[Visit App](https://savenoteslocally.netlify.app/) - Click it to open the app
+
 ![Preview image](./public/preview.PNG "Notes app preview")
 
 A barebone sleek note-taking application built with Javascript(React version on the way...) and Tailwind, offering a fast and intuitive way to create, edit, and organize your notes.
