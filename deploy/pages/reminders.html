@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes App - Reminders</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../src/custom.css" />
+      <!-- for out of vite -->
+      <link rel="stylesheet" href="./src/style.css"> 
+      <!-- prevention -->
+      <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-[#303030] overflow-hidden">
+    <!-- header of the page -->
+    <header class="border-b-gray-500 border-b-2 h-[13vh] sticky top-0">
+      <nav class="flex text-white items-center justify-between p-4">
+        <div id="menu" class="select-none flex items-center gap-3">
+          <i
+          id="menu-btn"
+            class="ri-menu-2-fill text-xl cursor-pointer hover:bg-[#80808033] rounded-full w-10 h-10 flex justify-center duration-150y-center items-center"
+          ></i>
+          <div id="logo" class="text-xl flex items-center cursor-pointer">
+            <img
+              src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png"
+              width="30"
+              alt=""
+            />
+            Notes
+          </div>
+        </div>
+        <div
+          id="serch"
+          class="bg-gray-500 w-96 py-1 px-3 focus-within:bg-white rounded-lg duration-150 text-lg font-[Gilroy] flex gap-2"
+        >
+          <i
+            class="ri-search-line cursor-pointer hover:bg-[#49494965] rounded-full duration-200 h-10 w-10 flex items-center justify-center"
+          ></i>
+          <input
+            type="text"
+            placeholder="Search"
+            class="outline-none text-black bg-transparent placeholder:text-white focus:placeholder:text-gray-500 w-[90%]"
+          />
+        </div>
+        <div id="profile" class="select-none">
+          <button
+            id="sync"
+            class="bg-[#ffa6005e] px-3 py-1 font-800 rounded-md shadow-lg hover:bg-orange-400 duration-150 text-lg"
+          >
+            <i class="ri-refresh-line"></i> Sync
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex text-white">
+      <!-- sidebar -->
+      <aside
+        id="sidebar"
+        class="pl-0 py-3 px-3 flex flex-col justify-between h-[80vh] w-[25%] select-none sticky top-[13vh] duration-150"
+      >
+        <ul class="text-xl pl-0 pr-3 py-3 flex flex-col space-y-3">
+          <li>
+            <a
+              class="content-center pl-2 inline-block w-full h-12 rounded-r-3xl hover:bg-[#ffa6005d] duration-150"
+              href="../index.html"
+              ><i class="ri-booklet-line"></i> <span class="sidebar-text">Notes</span></a
+            >
+          </li>
+          <li>
+            <a
+              class="content-center pl-2 inline-block w-full h-12 rounded-r-3xl hover:bg-[#ffa6005d] duration-150"
+              href="./reminders.html"
+              id="active"
+
+              ><i class="ri-notification-3-line"></i> <span class="sidebar-text">Reminders</span></a
+            >
+          </li>
+          <li>
+            <a
+              class="content-center pl-2 inline-block w-full h-12 rounded-r-3xl hover:bg-[#ffa6005d] duration-150"
+              href="./labels.html"
+              ><i class="ri-quill-pen-fill"></i> <span class="sidebar-text">Edit Labels</span> </a
+            >
+          </li>
+          <li>
+            <a
+              class="content-center pl-2 inline-block w-full h-12 rounded-r-3xl hover:bg-[#ffa6005d] duration-150"
+              href="./trash.html"
+              ><i class="ri-delete-bin-line"></i> <span class="sidebar-text">Transh</span></a
+            >
+          </li>
+        </ul>
+
+        <p class="text-lg ml-4 hover:underline">&copy; Himanshu - 2025</p>
+      </aside>
+
+
+      <!-- main view -->
+
+      <section id="view" class="flex items-center justify-center flex-col w-[75%]">
+        
+
+        <!-- reminders section -->
+        <section id="reminders" class="h-[87vh] w-full flex items-center justify-center">
+          <h1 class="text-5xl text-gray-600">I will add this feature in future if I get time! 😎😴</h1>
+        </section>
+
+       
+      </section>
+    </main>
+
+
+    <!-- notification -->
+    <div class="notification-container"></div>
+    <script src="../src/main.js"></script>
+
+  </body>
+</html>
